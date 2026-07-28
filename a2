@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean Masterclass - Professional A2 Level</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #475569;
+            --primary-color: #0284c7;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 12px 0;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-sub);
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 10px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .creator-tag {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .creator-tag span {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .eng-desc {
+            font-weight: 400;
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        .slide-card {
+            background-color: #ffffff !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: 20px !important;
+            padding: 40px 50px !important;
+            margin-bottom: 30px !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden !important;
+            position: relative;
+            page-break-before: always;
+            break-before: page;
+        }
+
+        .slide-card.hero-section {
+            page-break-before: avoid;
+            break-before: avoid;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 600px;
+        }
+
+        .main-title {
+            font-size: 38px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .main-title span {
+            color: var(--primary-color);
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-sub);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .pipeline-box {
+            background-color: #0f172a !important;
+            color: #ffffff !important;
+            border-radius: 16px !important;
+            padding: 24px 30px !important;
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+            text-align: left;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .pipeline-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 2px;
+            letter-spacing: 0.3px;
+        }
+
+        .pipeline-desc {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .pipeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e293b !important;
+            color: #ffffff !important;
+            padding: 10px 16px !important;
+            border-radius: 10px !important;
+            margin-bottom: 6px !important;
+            font-size: 13px;
+            font-weight: 500;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .pipeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .day-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            background: #e0f2fe !important;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .day-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.3px;
+        }
+
+        .day-focus {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lesson-block {
+            margin-bottom: 12px;
+        }
+
+        .lesson-header {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .lesson-tip {
+            font-size: 12px;
+            font-weight: 600;
+            background: #f8fafc !important;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: #334155;
+            margin-bottom: 6px;
+            border: 1px solid var(--border-color);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .lesson-content {
+            font-size: 13px;
+            color: #334155;
+            padding-left: 2px;
+        }
+
+        .lesson-content div {
+            margin-bottom: 4px;
+        }
+
+        .practice-box {
+            background: #f0f9ff !important;
+            border-left: 4px solid var(--primary-color) !important;
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+            font-size: 13px;
+            margin-top: 10px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .practice-title {
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 2px;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .native-tip-box {
+            background: #fdf4ff !important;
+            border-left: 4px solid #c084fc !important;
+            padding: 10px 16px;
+            border-radius: 0 10px 10px 0;
+            font-size: 12px;
+            margin-top: 8px;
+            color: #581c87;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm;
+            }
+            html, body {
+                width: 100% !important;
+                height: 100% !important;
+                background-color: var(--bg-color) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .wrapper {
+                width: 100% !important;
+                max-width: none !important;
+                padding: 0 !important;
+                display: block !important;
+            }
+            .nav-bar, .creator-tag {
+                display: none !important;
+            }
+            .slide-card {
+                background-color: #ffffff !important;
+                border: 1px solid var(--border-color) !important;
+                border-radius: 20px !important;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+                margin: 0 auto 20px auto !important;
+                width: 100% !important;
+                height: auto !important;
+                max-width: none !important;
+                padding: 40px 50px !important;
+                overflow: hidden !important;
+                position: relative !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                page-break-before: always !important;
+                break-before: page !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .slide-card.hero-section {
+                page-break-before: avoid !important;
+                break-before: avoid !important;
+                justify-content: center !important;
+                align-items: center !important;
+                min-height: 500px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="nav-bar">
+        <span>STRATEGY GUIDE</span>
+        <span>A2 LEVEL MASTERCLASS</span>
+        <span>ELEMENTARY BRIDGE</span>
+        <span>PROFESSIONAL CURRICULUM</span>
+    </div>
+    <div class="creator-tag">Curriculum Design by <span>@greenie.korean</span></div>
+
+    <!-- 히어로 섹션 -->
+    <div class="slide-card hero-section">
+        <div class="main-title">KOREAN <br><span>A2 MASTERCLASS.</span></div>
+        <div class="subtitle">Professional Strategy & Elementary-Intermediate Bridge Curriculum (Natural Spoken Focus)</div>
+        <div class="pipeline-box">
+            <div class="pipeline-title">A2 Strategic Study Roadmap (15-Day Plan)</div>
+            <div class="pipeline-desc">Bridging basic sentences to fluent, natural native spoken communication.</div>
+            <div class="pipeline-item"><span>Phase 1. Sentence Linkage, Ability & Causal Logic (Days 01-05)</span><span style="color: #64748b;">Foundation</span></div>
+            <div class="pipeline-item"><span>Phase 2. Experience, Comparison & State Transitions (Days 06-10)</span><span style="color: #64748b;">Expansion</span></div>
+            <div class="pipeline-item"><span>Phase 3. Suggestions, Suppositions & Final Integration (Days 11-15)</span><span style="color: #64748b;">Fluency Flow</span></div>
+        </div>
+    </div>
+
+    <!-- DAY 01 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 01</div>
+            <div class="day-title">Sentence Linkage: Conjunctions (-고, -지만)</div>
+            <div class="day-focus">단순 나열과 대조를 통해 문장의 길이를 확장하는 기본 전략<div class="eng-desc">Expanding basic sentences through coordination and contrastive linkage.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L1. 동사/형용사 어간 + -고 / -지만</div>
+                <div class="lesson-tip">전략 포인트: 단답형 표현에서 벗어나 두 가지 이상의 사실을 유기적으로 엮어 말하기.<div class="eng-desc">Essential syntax for connecting thoughts smoothly.</div></div>
+                <div class="lesson-content">
+                    <div>1. 아침 먹고 회사에 가요. <span class="eng-desc">(I eat breakfast and go to work - natural omission)</span></div>
+                    <div>2. 한국어는 재미있지만 조금 어려워요. <span class="eng-desc">(Korean is interesting, but a bit difficult.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 주말에 보통 뭐 해요? | B: 집에서 쉬고 운동도 해요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 구어체에서는 '아침을 먹고' 대신 '아침 먹고'처럼 목적격 조사를 생략해야 훨씬 자연스럽습니다.<br>
+            <span class="eng-desc">In spoken Korean, omitting object particles (like '을/를') makes sentences sound much more natural.</span>
+        </div>
+    </div>
+
+    <!-- DAY 02 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 02</div>
+            <div class="day-title">Ability & Permission Mechanics (-(으)ㄹ 수 있다)</div>
+            <div class="day-focus">개인의 역량과 사회적 허용 범위를 명확히 표현하는 방법<div class="eng-desc">Expressing capability and permission boundaries.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L2. 동사 어간 + -(으)ㄹ 수 있다 / 없다</div>
+                <div class="lesson-tip">전략 포인트: 할 수 있는 일과 없는 일을 정확히 구분 지어 신뢰도 높이기.<div class="eng-desc">Critical for describing functional skills.</div></div>
+                <div class="lesson-content">
+                    <div>1. 한국어로 이메일 쓸 수 있어요. <span class="eng-desc">(I can write emails in Korean.)</span></div>
+                    <div>2. 내일은 바빠서 참석할 수 없어요. <span class="eng-desc">(I cannot attend tomorrow.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 혹시 운전 할 줄 아세요? | B: 네, 면허가 있어서 운전할 수 있어요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 회화에서는 '-습니다/ㅂ니다'보다 '-어요/아요'나 구어체 표현이 훨씬 부드럽게 들립니다.<br>
+            <span class="eng-desc">Conversational endings sound much softer and more approachable than rigid formal endings.</span>
+        </div>
+    </div>
+
+    <!-- DAY 03 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 03</div>
+            <div class="day-title">Causal Relationships & Explanations (-아/어서, -니까)</div>
+            <div class="day-focus">행동의 동기와 인과관계를 논리적으로 소명하는 전략<div class="eng-desc">Structuring foundational reasoning and causal explanations.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L3. 동사/형용사 어간 + -아/어서 / -니까</div>
+                <div class="lesson-tip">전략 포인트: 상대방 질문에 단순 대답을 넘어 명확한 근거 덧붙이기.<div class="eng-desc">Providing structured justification.</div></div>
+                <div class="lesson-content">
+                    <div>1. 길이 막혀서 늦었어요. <span class="eng-desc">(I was late because the road was jammed.)</span></div>
+                    <div>2. 날씨가 좋으니 산책합시다. <span class="eng-desc">(Since the weather is nice, let's take a walk.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 왜 회의에 늦으셨어요? | B: 지하철 고장 나서 늦었어요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> '지하철이 고장 나서'에서 조사 '이'를 생략하여 '지하철 고장 나서'로 말하면 원어민 리듬에 가까워집니다.<br>
+            <span class="eng-desc">Dropping the subject particle sounds snappy and matches native speech rhythm.</span>
+        </div>
+    </div>
+
+    <!-- DAY 04 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 04</div>
+            <div class="day-title">Intentions & Future Plans (-겠-, -(으)ㄹ 거예요)</div>
+            <div class="day-focus">미래 계획과 화자의 의지를 체계적으로 수립하는 표현<div class="eng-desc">Mapping out future intentions.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L4. 동사 어간 + -겠- / -(으)ㄹ 거예요</div>
+                <div class="lesson-tip">전략 포인트: 향후 일정이나 목표를 명확하게 선언하는 화법.<div class="eng-desc">Essential for scheduling and commitments.</div></div>
+                <div class="lesson-content">
+                    <div>1. 내일부터 새 프로젝트 시작하겠습니다. <span class="eng-desc">(I will start a new project from tomorrow.)</span></div>
+                    <div>2. 주말에 가족들과 시간 보낼 거예요. <span class="eng-desc">(I will spend time with my family on the weekend.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 퇴근후에 뭐 하실 거예요? | B: 바로 집에 가서 쉴 거예요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 계획을 말할 때는 '-을 거예요'를 축약해 '~ㄹ 거예요'로 자연스럽게 발음합니다.<br>
+            <span class="eng-desc">Contracting future endings makes your speech flow smoothly without sounding robotic.</span>
+        </div>
+    </div>
+
+    <!-- DAY 05 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 05</div>
+            <div class="day-title">Experience & Past Recollection (-아/어 보다)</div>
+            <div class="day-focus">지금까지의 경험을 바탕으로 시도와 실전 감각 익히기<div class="eng-desc">Recounting past experiences.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L5. 동사 어간 + -아/어 보다</div>
+                <div class="lesson-tip">전략 포인트: 새로운 일을 시도해 본 경험을 묻고 답하는 필수 회화 패턴.<div class="eng-desc">Used to express trying out actions.</div></div>
+                <div class="lesson-content">
+                    <div>1. 이 김치찌개를 드셔 보세요. <span class="eng-desc">(Please try this kimchi stew.)</span></div>
+                    <div>2. 제주도 가본 적 있어요. <span class="eng-desc">(I have been to Jeju Island.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 한국 음식 중에 뭐 좋아해요? | B: 비빔밥 먹어 봤는데 맛있었어요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> "한국 음식 중에 **뭘** 좋아해요?"보다 "뭐 좋아해요?", "비빔밥**을**"보다 "비빔밥"처럼 조사를 생략하는 것이 구어체의 핵심입니다.<br>
+            <span class="eng-desc">Cutting out auxiliary particles creates the authentic casual cadence of native speakers.</span>
+        </div>
+    </div>
+
+    <!-- DAY 06 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 06</div>
+            <div class="day-title">Requests & Polite Favors (-아/어 주세요)</div>
+            <div class="day-focus">상대방에게 정중하게 협조를 구하고 도움을 요청하기<div class="eng-desc">Formulating polite requests.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L6. 동사 어간 + -아/어 주세요 / -주시겠어요?</div>
+                <div class="lesson-tip">전략 포인트: 무례하지 않게 협조를 이끌어내는 화법.<div class="eng-desc">Essential for polite workplace collaboration.</div></div>
+                <div class="lesson-content">
+                    <div>1. 조금만 천천히 말씀해 주시겠어요? <span class="eng-desc">(Could you please speak a little slower?)</span></div>
+                    <div>2. 이 서류 복사해 주세요. <span class="eng-desc">(Please copy this document.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 도움이 필요하신가요? | B: 이 메일 확인 좀 도와주세요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 요청할 때 '이 서류를' 대신 '이 서류'로 목적어를 담백하게 던지면 부담 없는 정중함이 전달됩니다.<br>
+            <span class="eng-desc">Presenting objects without markers keeps requests sounding friendly yet polite.</span>
+        </div>
+    </div>
+
+    <!-- DAY 07 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 07</div>
+            <div class="day-title">Prohibition & Negative Commands (-지 마세요)</div>
+            <div class="day-focus">상대방의 특정 행동을 예의 있게 제지하거나 주의 주기<div class="eng-desc">Expressing polite prohibitions.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L7. 동사 어간 + -지 마세요</div>
+                <div class="lesson-tip">전략 포인트: 금지 규정을 부드럽지만 단호하게 전달하기.<div class="eng-desc">Used for setting clear boundaries.</div></div>
+                <div class="lesson-content">
+                    <div>1. 아니요, 여기서 드시면 안 돼요. <span class="eng-desc">(No, you must not eat here.)</span></div>
+                    <div>2. 너무 걱정하지 마세요. <span class="eng-desc">(Please don't worry too much.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 실내에서 음식 먹어도 돼요? | B: 아니요, 여기서 드시면 안 돼요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 금지할 때 딱딱한 규정조 말투보다는 "드시면 안 돼요"처럼 부드러운 제재 표현이 일상에서 많이 쓰입니다.<br>
+            <span class="eng-desc">Softer prohibitions sound much more natural in daily conversation than strict textbook rules.</span>
+        </div>
+    </div>
+
+    <!-- DAY 08 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 08</div>
+            <div class="day-title">State & Maintenance (-고 있다)</div>
+            <div class="day-focus">현재 진행 중인 동작이나 지속되는 상태 묘사하기<div class="eng-desc">Describing ongoing actions.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L8. 동사 어간 + -고 있다</div>
+                <div class="lesson-tip">전략 포인트: 지금 현재 무엇을 하고 있는지 실시간 상황 보고하기.<div class="eng-desc">Critical for reporting progress.</div></div>
+                <div class="lesson-content">
+                    <div>1. 지하철 타고 회사에 가고 있어요. <span class="eng-desc">(I am riding the subway and going to work.)</span></div>
+                    <div>2. 친구 기다리고 있어요. <span class="eng-desc">(I am waiting for a friend.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 지금 어디예요? | B: 지하철 타고 회사에 가고 있어요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 진행형을 쓸 때도 조사를 생략하여 "지하철 타고"라고 연결하면 구어체 리듬이 살아납니다.<br>
+            <span class="eng-desc">Linking actions quickly without particles builds a lively conversational rhythm.</span>
+        </div>
+    </div>
+
+    <!-- DAY 09 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 09</div>
+            <div class="day-title">State Results & Clothing (-아/어 있다, -고 있다)</div>
+            <div class="day-focus">동작이 끝난 후 남은 결과 상태와 착용 상태 표현하기<div class="eng-desc">Expressing resulting states.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L9. 동사 어간 + -아/어 있다 / -고 있다</div>
+                <div class="lesson-tip">전략 포인트: 눈에 보이는 고정된 국면이나 착용 상태 묘사.<div class="eng-desc">Describing static spatial states and attire.</div></div>
+                <div class="lesson-content">
+                    <div>1. 벽에 큰 그림이 걸려 있어요. <span class="eng-desc">(A large picture is hanging on the wall.)</span></div>
+                    <div>2. 코트 입고 있어요. <span class="eng-desc">(I am wearing a coat.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 교실 안에 사람이 있나요? | B: 네, 학생들이 자리에 앉아 있어요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 공간 상태를 말할 때도 조사를 빼고 명사+동사 형태로 툭툭 던지듯 말하는 것이 특징입니다.<br>
+            <span class="eng-desc">Describing surroundings with concise noun-verb chunks mimics native shorthand style.</span>
+        </div>
+    </div>
+
+    <!-- DAY 10 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 10</div>
+            <div class="day-title">Comparative Analysis (-보다 더, 가장/제일)</div>
+            <div class="day-focus">두 개 이상의 대상이나 상태를 비교하여 우위를 가리기<div class="eng-desc">Making comparisons.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L10. 명사 + 보다 (더) / 가장, 제일</div>
+                <div class="lesson-tip">전략 포인트: 차이점을 객관적 데이터로 비교 설명하기.<div class="eng-desc">Essential for preference rankings.</div></div>
+                <div class="lesson-content">
+                    <div>1. 오늘이 어제보다 더 추워요. <span class="eng-desc">(Today is colder than yesterday.)</span></div>
+                    <div>2. 한국에서 제주도가 가장 유명해요. <span class="eng-desc">(Jeju Island is the most famous.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 어떤 모델이 더 나을까요? | B: 이 제품이 가격도 저렴하고 성능 더 좋아요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 비교급 표현에서도 수식어 사이의 조사를 가볍게 생략하여 속도감을 높여줍니다.<br>
+            <span class="eng-desc">Speed up comparisons by trimming unnecessary structural markers.</span>
+        </div>
+    </div>
+
+    <!-- DAY 11 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 11</div>
+            <div class="day-title">Intentional Objectives (-(으)러 가다/오다)</div>
+            <div class="day-focus">특정 목적을 달성하기 위해 이동하는 동선 설명하기<div class="eng-desc">Expressing purpose of movement.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L11. 동사 어간 + -(으)러 가다 / 오다</div>
+                <div class="lesson-tip">전략 포인트: 외출의 목적이나 출장의 이유를 명확하게 커뮤니케이션.<div class="eng-desc">Articulating travel objectives.</div></div>
+                <div class="lesson-content">
+                    <div>1. 점심 먹으러 식당에 가요. <span class="eng-desc">(I'm going to eat lunch.)</span></div>
+                    <div>2. 책 빌리러 도서관에 왔어요. <span class="eng-desc">(I came to borrow a book.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 지금 어디 가세요? | B: 회의 자료 사러 서점에 가요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 목적을 나타내는 표현 앞에서도 목적어 조사를 생략하는 것이 구어체 표준입니다.<br>
+            <span class="eng-desc">Standard spoken Korean drops object particles before directional intentions.</span>
+        </div>
+    </div>
+
+    <!-- DAY 12 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 12</div>
+            <div class="day-title">Background Setup & Circumstances (-는데/은데)</div>
+            <div class="day-focus">원활한 대화를 위해 사전 배경 상황이나 정황 깔아두기<div class="eng-desc">Setting up background context.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L12. 동사/형용사 어간 + -는데 / 명사 + 인데</div>
+                <div class="lesson-tip">전략 포인트: 본론 전 주의를 환기하고 자연스러운 대화 유도.<div class="eng-desc">Essential conversational glue.</div></div>
+                <div class="lesson-content">
+                    <div>1. 날씨가 좋은데 산책할까요? <span class="eng-desc">(The weather is nice, so shall we take a walk?)</span></div>
+                    <div>2. 지금은 바쁜데 이따가 통화할 수 있어요? <span class="eng-desc">(I'm busy right now, can we talk later?)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 지금 시간 괜찮으세요? | B: 잠깐은 되는데 오래는 안 될 것 같아요.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 배경을 깔아줄 때 완벽한 문장 대신 "잠깐은 되는데"처럼 여운을 남기는 어미 연결이 자연스러워요.<br>
+            <span class="eng-desc">Ending sentences with open clauses like '-는데' creates natural conversational transitions.</span>
+        </div>
+    </div>
+
+    <!-- DAY 13 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 13</div>
+            <div class="day-title">Suggestions & Joint Action (-을까요?)</div>
+            <div class="day-focus">상대방의 의견을 부드럽게 묻고 공동의 행동 제안하기<div class="eng-desc">Making polite suggestions.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L13. 동사 어간 + -(으)ㄹ까요?</div>
+                <div class="lesson-tip">전략 포인트: 독단적 결정 대신 상대 의사 존중하며 리드하기.<div class="eng-desc">Courteous proposals.</div></div>
+                <div class="lesson-content">
+                    <div>1. 뭐 먹을까요? <span class="eng-desc">(What shall we eat?)</span></div>
+                    <div>2. 내일 오전 10시에 만날까요? <span class="eng-desc">(Shall we meet tomorrow at 10 AM?)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 회의 장소 어디로 할까요? | B: 1회의실에서 하는 거 어떨까요?</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> "무엇을 먹을까요?"보다 "뭐 먹을까요?", "장소를 어디로"보다 "장소 어디로"가 실제 입에 붙는 표현입니다.<br>
+            <span class="eng-desc">Contractions and reduced phrasing make suggestions sound effortless and friendly.</span>
+        </div>
+    </div>
+
+    <!-- DAY 14 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 14</div>
+            <div class="day-title">Obligation & Necessity (-아야 하다/되다)</div>
+            <div class="day-focus">반드시 지켜야 하는 의무와 필수적인 과정 명시하기<div class="eng-desc">Expressing absolute obligations.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L14. 동사 어간 + -아야 하다 / 되다</div>
+                <div class="lesson-tip">전략 포인트: 업무상 꼭 완수해야 하는 책임이나 규정 전달.<div class="eng-desc">Conveying rules and duties.</div></div>
+                <div class="lesson-content">
+                    <div>1. 오늘까지 보고서를 제출해야 해요. <span class="eng-desc">(I must submit the report by today.)</span></div>
+                    <div>2. 출발하기 전에 예약 확인해야 해요. <span class="eng-desc">(We need to check reservations.)</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>A: 주차하려면 어떻게 해야 돼요? | B: 로비에서 방문증 받아야 합니다.</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Tip:</strong> 의무를 말할 때 '보고서를' 대신 '보고서'만 툭 던져도 급박한 업무 뉘앙스가 완벽히 살아납니다.<br>
+            <span class="eng-desc">Dropping particles in obligations gives an urgent, real-world workplace vibe.</span>
+        </div>
+    </div>
+
+    <!-- DAY 15 -->
+    <div class="slide-card">
+        <div>
+            <div class="day-badge">DAY 15</div>
+            <div class="day-title">A2 Comprehensive Elementary Bridge Synthesis</div>
+            <div class="day-focus">연결, 의무, 제안, 배경 설정을 총동원한 실전 소통 능력 최종 평가<div class="eng-desc">Final A2 integration and natural dialogue check.</div></div>
+            <div class="lesson-block">
+                <div class="lesson-header">L15. A2 Ultimate Integration & Daily Fluency Briefing</div>
+                <div class="lesson-tip">전략 포인트: 15일간 체득한 구어체 리듬과 문장 확장력을 엮어 실제 대화 완성.<div class="eng-desc">Synthesizing all elementary spoken patterns.</div></div>
+            </div>
+        </div>
+        <div class="practice-box">
+            <div class="practice-title">PROFESSIONAL DIALOGUE PRACTICE (NATURAL SPOKEN STYLE)</div>
+            <div>비록 조금 어렵긴 하지만, 매일 꾸준히 연습하면 누구나 자연스럽게 말할 수 있어요!</div>
+            <div class="eng-desc">(Even though it's a bit tough, with steady practice anyone can speak naturally!)</div>
+        </div>
+        <div class="native-tip-box">
+            <strong>💡 Native Final Tip:</strong> 문법과 조사는 글을 쓸 때 지키는 뼈대일 뿐, 말할 때는 군더더기를 빼고 호흡대로 말하는 것이 진짜 실력입니다!<br>
+            <span class="eng-desc">Grammar is the skeleton for writing, but real speaking flows with natural breathing rhythm, not rigid rules!</span>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+EOF
