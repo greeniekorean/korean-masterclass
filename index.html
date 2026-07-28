@@ -1,679 +1,172 @@
+cat << 'EOF' > ~/Desktop/korean_masterclass.html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korean Curriculum - Full 13 Days</title>
-    <style>
-        @import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_230821@1.1/Paperlogy-5Medium.woff2');
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Paperlogy', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #eef2f6;
-            color: #111827;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .curriculum-card {
-            background-color: #ffffff;
-            width: 100%;
-            max-width: 1200px;
-            padding: 60px 70px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            margin-bottom: 50px;
-            page-break-after: always;
-        }
-
-        .badge {
-            display: inline-block;
-            background-color: #ffe4e6;
-            color: #e11d48;
-            font-size: 15px;
-            font-weight: 700;
-            padding: 6px 16px;
-            border-radius: 6px;
-            margin-bottom: 22px;
-            letter-spacing: 0.5px;
-        }
-
-        h1.title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: #1f2937;
-        }
-
-        .subtitle-ko {
-            font-size: 20px;
-            font-weight: 600;
-            color: #4b5563;
-            margin-bottom: 8px;
-        }
-
-        .subtitle-en {
-            font-size: 17px;
-            color: #6b7280;
-            margin-bottom: 40px;
-        }
-
-        .divider {
-            height: 1px;
-            background-color: #e5e7eb;
-            margin-bottom: 40px;
-        }
-
-        .lesson-block {
-            margin-bottom: 40px;
-        }
-
-        .lesson-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 16px;
-        }
-
-        .info-box {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 20px 24px;
-            border-radius: 12px;
-            margin-bottom: 14px;
-        }
-
-        .info-box p {
-            font-size: 17px;
-            line-height: 1.6;
-        }
-
-        .info-box .ko-text {
-            color: #334155;
-            margin-bottom: 6px;
-            font-weight: 500;
-        }
-
-        .info-box .en-text {
-            color: #64748b;
-        }
-
-        .example-list {
-            list-style: none;
-            padding-left: 6px;
-        }
-
-        .example-list li {
-            font-size: 17px;
-            color: #374151;
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
-
-        .practice-box {
-            background-color: #fff1f2;
-            border-left: 5px solid #e11d48;
-            padding: 30px 35px;
-            border-radius: 0 14px 14px 0;
-            margin-top: 45px;
-        }
-
-        .practice-header {
-            font-size: 16px;
-            font-weight: 700;
-            color: #e11d48;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-
-        .practice-content p {
-            font-size: 17px;
-            color: #4c0519;
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        @media print {
-            body {
-                background-color: #ffffff !important;
-                display: block;
-                padding: 0;
-            }
-
-            .curriculum-card {
-                box-shadow: none;
-                max-width: 100%;
-                padding: 20px;
-                margin: 0;
-                border-radius: 0;
-            }
-
-            body, .curriculum-card, .badge, .info-box, .practice-box {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Korean Masterclass - Complete 13 Days (Landscape Presentation Edition)</title>
+  <style>
+    :root {
+      --bg-color: #eef2f7;
+      --card-bg: #ffffff;
+      --text-main: #111111;
+      --text-sub: #555555;
+      --primary-color: #ff2a75;
+      --border-color: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.4; }
+    .wrapper { width: 100%; max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+    .nav-bar { display: flex; justify-content: center; gap: 20px; padding: 12px 0; font-size: 13px; font-weight: 600; color: var(--text-sub); background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px; }
+    .eng-desc { font-weight: 300; font-size: 12px; color: #777777; margin-top: 2px; line-height: 1.3; }
+    .slide-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 20px; padding: 40px 50px; margin-bottom: 40px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); page-break-before: always; break-before: page; page-break-inside: avoid; break-inside: avoid; }
+    .slide-card.hero-section { page-break-before: avoid; break-before: avoid; }
+    .hero-section { text-align: center; padding: 60px 40px; }
+    .main-title { font-size: 34px; font-weight: 800; line-height: 1.2; margin-bottom: 12px; }
+    .main-title span { color: var(--primary-color); }
+    .subtitle { font-size: 15px; color: var(--text-sub); margin-bottom: 24px; }
+    .pipeline-box { background-color: #111111; color: #ffffff; border-radius: 16px; padding: 20px; width: 100%; max-width: 500px; margin: 0 auto; text-align: left; }
+    .pipeline-title { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+    .pipeline-desc { font-size: 11px; color: #aaaaaa; margin-bottom: 12px; }
+    .pipeline-item { display: flex; justify-content: space-between; align-items: center; background-color: #222222; padding: 10px 14px; border-radius: 8px; margin-bottom: 6px; font-size: 12px; }
+    .pipeline-item:last-child { margin-bottom: 0; }
+    .day-badge { display: inline-block; font-size: 11px; font-weight: 700; color: var(--primary-color); background: #fff0f3; padding: 4px 10px; border-radius: 6px; margin-bottom: 8px; }
+    .day-title { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .day-focus { font-size: 14px; font-weight: 600; color: var(--text-sub); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border-color); }
+    .lesson-block { margin-bottom: 18px; }
+    .lesson-header { font-size: 15px; font-weight: 700; color: #222; margin-bottom: 4px; }
+    .lesson-tip { font-size: 12px; font-weight: 600; background: #f8f9fa; padding: 10px 14px; border-radius: 8px; color: #495057; margin-bottom: 8px; border: 1px solid #edf2f7; }
+    .lesson-content { font-size: 13px; color: #212529; padding-left: 4px; }
+    .lesson-content div { margin-bottom: 4px; }
+    .practice-box { background: #fff5f7; border-left: 5px solid var(--primary-color); padding: 16px 20px; border-radius: 0 12px 12px 0; font-size: 13px; margin-top: 20px; }
+    .practice-title { font-weight: 800; color: var(--primary-color); margin-bottom: 4px; font-size: 12px; letter-spacing: 0.5px; }
+    @media print {
+      @page { size: A4 landscape !important; margin: 10mm !important; }
+      body, html { background-color: #ffffff !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .wrapper { width: 100% !important; max-width: none !important; padding: 0 !important; }
+      .nav-bar { display: none !important; }
+      .slide-card { background: #ffffff !important; border: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; padding: 25px 35px !important; width: 100vw !important; height: 100vh !important; page-break-before: always !important; break-before: page !important; page-break-inside: avoid !important; break-inside: avoid !important; }
+      .slide-card.hero-section { page-break-before: avoid !important; break-before: avoid !important; }
+    }
+  </style>
 </head>
 <body>
-
-    <!-- ==================== DAY 01 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 01</div>
-        <h1 class="title">Basic Greetings & Courtesy Expressions</h1>
-        <div class="subtitle-ko">첫인상의 시작, 정중한 인사 표현 완벽 마스터 👏✨</div>
-        <div class="subtitle-en">Mastering polite greetings and starting conversations naturally.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 안녕하세요, 감사합니다</div>
-            <div class="info-box">
-                <p class="ko-text">💡 기본 인사: 만날 때나 고마움을 전할 때 쓰는 정중한 존댓말입니다.</p>
-                <p class="en-text">Used when greeting someone or expressing gratitude politely.</p>
-            </div>
-            <ul class="example-list">
-                <li>A: 안녕하세요! (Hello!) | B: 감사합니다. (Thank you.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 은 / 는 (Topic Marker) - Core Intro</div>
-            <div class="info-box">
-                <p class="ko-text">💡 주제격 조사: 문장의 주제나 대상을 나타낼 때 사용합니다. (받침 O: 은 / 받침 X: 는)</p>
-                <p class="en-text">Indicates the topic of the sentence. Use 은 after consonants and 는 after vowels.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 저는 학생이에요. (As for me, I am a student.)</li>
-                <li>2. 오늘은 날씨가 좋아요. (As for today, the weather is nice.)</li>
-                <li>3. 사과는 맛있어요. (Apples are delicious.)</li>
-                <li>4. 저녁은 불고기를 먹어요. (For dinner, I eat bulgogi.)</li>
-                <li>5. 한국어는 재미있어요. (Korean is interesting.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 1 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(PRACTICE CONVERSATIONAL FLOW)</p>
-                <p>A: 안녕하세요! 저는 학생이에요! (Hello! As for me, I am a student.)</p>
-                <p>B: 감사합니다! 한국어는 재미있어요? (Thank you! Is Korean interesting?)</p>
-            </div>
-        </div>
+  <div class="wrapper">
+    <div class="nav-bar"><span>HOME</span><span>ABOUT</span><span>CURRICULUM</span><span>MASTERCLASS</span><span>CONTACT</span></div>
+    <div class="slide-card hero-section">
+      <div class="main-title">KOREAN <br><span>CURRICULUM MASTER.</span></div>
+      <div class="subtitle">13-Day Step-by-Step Intensive Lesson Plan (Landscape Edition)</div>
+      <div class="pipeline-box">
+        <div class="pipeline-title">50-Min Pipeline</div>
+        <div class="pipeline-desc">Optimized for maximum speaking retention.</div>
+        <div class="pipeline-item"><span>01. Warm-up & Review</span><span style="color: #aaa;">5m</span></div>
+        <div class="pipeline-item"><span>02. Core Concept Intro</span><span style="color: #aaa;">10m</span></div>
+        <div class="pipeline-item"><span>03. Pattern Drill</span><span style="color: #aaa;">15m</span></div>
+        <div class="pipeline-item"><span>04. Role-play & App</span><span style="color: #aaa;">15m</span></div>
+      </div>
     </div>
-
-    <!-- ==================== DAY 02 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 02</div>
-        <h1 class="title">Self-Introduction & Basic Information</h1>
-        <div class="subtitle-ko">이름, 국적, 직업을 말하며 나를 소개하기 🌏🤝</div>
-        <div class="subtitle-en">Introducing yourself by sharing your name, nationality, and occupation.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. ~예요 / ~이에요 (To be)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 서술격 조사: 명사 뒤에 붙어 '~이다'의 의미를 나타냅니다. (받침 O: 이예요 / 받침 X: 예요)</p>
-                <p class="en-text">Equivalent to "am / are / is" in English. Used after nouns.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 저는 미국인이에요. (I am American.)</li>
-                <li>2. 제 친구는 의사예요. (My friend is a doctor.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 국적과 직업 표현하기</div>
-            <div class="info-box">
-                <p class="ko-text">💡 나라 이름 뒤에 '~사람' 또는 '~국적'을 붙여 출신을 나타냅니다.</p>
-                <p class="en-text">Expressing origins and occupations using standard nouns.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 브라이언 씨는 회사원이에요. (Brian is an office worker.)</li>
-                <li>2. 우리는 한국어를 공부해요. (We study Korean.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 2 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(SELF-INTRODUCTION DIALOGUE)</p>
-                <p>A: 안녕하세요? 저는 민수예요. 회사원이에요. (Hello? I am Minsu. I'm an office worker.)</p>
-                <p>B: 반가워요! 저는 캐나다 사람이에요. (Nice to meet you! I am from Canada.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 01</div>
+      <div class="day-title">Basic Greetings & Courtesy Expressions</div>
+      <div class="day-focus">첫인상의 시작, 정중한 인사 표현 완벽 마스터 👋✨<div class="eng-desc">Mastering polite greetings and starting conversations naturally.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L1. 안녕하세요, 감사합니다</div><div class="lesson-tip">💡 기본 인사: 만날 때나 고마움을 전할 때 쓰는 정중한 존댓말입니다.<div class="eng-desc">Used when greeting someone or expressing gratitude politely.</div></div><div class="lesson-content"><div>A: 안녕하세요! <span class="eng-desc">(Hello!)</span> | B: 감사합니다. <span class="eng-desc">(Thank you.)</span></div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L2. 은 / 는 (Topic Marker) - Core Intro</div><div class="lesson-tip">💡 주제격 조사: 문장의 주제나 대상을 나타낼 때 사용합니다. (받침 O: 은 / 받침 X:는)<div class="eng-desc">Indicates the topic of the sentence. Use 은 after consonants and 는 after vowels.</div></div><div class="lesson-content"><div>1. 저는 학생이에요. <span class="eng-desc">(As for me, I am a student.)</span></div><div>2. 오늘은 날씨가 좋아요. <span class="eng-desc">(As for today, the weather is nice.)</span></div><div>3. 사과는 맛있어요. <span class="eng-desc">(Apples are delicious.)</span></div><div>4. 저녁은 불고기를 먹어요. <span class="eng-desc">(For dinner, I eat bulgogi.)</span></div><div>5. 한국어는 재미있어요. <span class="eng-desc">(Korean is interesting.)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 1 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 안녕하세요! 저는 학생이에요. <span class="eng-desc">(Hello! As for me, I am a student.)</span></div><div>B: 감사합니다! 한국어는 재미있어요? <span class="eng-desc">(Thank you! Is Korean interesting?)</span></div></div>
     </div>
-
-    <!-- ==================== DAY 03 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 03</div>
-        <h1 class="title">Numbers, Currency & Shopping</h1>
-        <div class="subtitle-ko">숫자로 물건 가격 묻고 쇼핑하기 💳🛒</div>
-        <div class="subtitle-en">Asking prices and going shopping using Korean numbers.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 고유어 숫자와 한자어 숫자</div>
-            <div class="info-box">
-                <p class="ko-text">💡 개수를 셀 때는 고유어(하나, 둘), 가격이나 번호는 한자어(일, 이, 삼)를 사용합니다.</p>
-                <p class="en-text">Native numbers for counting, Sino-Korean numbers for money/numbers.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 사과 사 개 주세요. (Please give me four apples.)</li>
-                <li>2. 이 옷은 오만 원이에요. (This clothes cost 50,000 won.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 이거 얼마예요? (How much is this?)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 물건을 가리키며 가격을 물어보는 실생활 필수 표현입니다.</p>
-                <p class="en-text">Essential daily expression to ask for item prices.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 저거는 얼마예요? (How much is that over there?)</li>
-                <li>2. 이거 하나 주세요. (Give me one of this, please.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 3 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(AT THE MARKET)</p>
-                <p>A: 사과 이거 얼마예요? (How much are these apples?)</p>
-                <p>B: 만 원이에요. (It is 10,000 won.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 02</div>
+      <div class="day-title">Farewells, Apologies & Calling Attention</div>
+      <div class="day-focus">상황별 맞춤 작별 인사와 정중한 사과 표현 🙋‍♂️💬<div class="eng-desc">Learn how to say goodbye, apologize, and grab attention.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L3. 안녕히 계세요 / 가세요</div><div class="lesson-tip">💡 작별 인사 구분: 내가 떠날 때와 남을 때의 표현 차이.<div class="eng-desc">Different farewell expressions based on who is leaving or staying.</div></div><div class="lesson-content"><div>• 안녕히 계세요: 내가 떠날 때 <span class="eng-desc">(Leaving)</span> | • 안녕히 가세요: 내가 머물 때 <span class="eng-desc">(Staying)</span></div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L4. 죄송합니다, 저기요</div><div class="lesson-tip">💡 사과와 호출: 사과할 때나 점원을 부를 때 사용합니다.<div class="eng-desc">Used to apologize or catch someone's attention like a waiter.</div></div><div class="lesson-content"><div>A: 죄송합니다! <span class="eng-desc">(I'm sorry!)</span> | B: 저기요, 물 좀 주세요. <span class="eng-desc">(Excuse me, water please.)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 2 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 저기요! 죄송하지만 물 좀 주세요. <span class="eng-desc">(Excuse me! Water please.)</span> | B: 네, 여기 있습니다. 안녕히 가세요! <span class="eng-desc">(Here it is. Goodbye!)</span></div></div>
     </div>
-
-    <!-- ==================== DAY 04 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 04</div>
-        <h1 class="title">Locations & Movement</h1>
-        <div class="subtitle-ko">장소를 나타내고 이동 방향 말하기 🗺️🚶‍♂️</div>
-        <div class="subtitle-en">Indicating locations and talking about moving directions.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 장소 조사: ~에 (To / At)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 가다, 오다 등 이동 동사와 함께 쓰여 목적지를 나타냅니다.</p>
-                <p class="en-text">Indicates destination or location with movement verbs.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 어디에 가요? (Where are you going?)</li>
-                <li>2. 저는 학교에 가요. (I am going to school.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 위치 명사 (~ 위에, ~ 아래에)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 물건의 상대적 위치를 설명할 때 사용합니다.</p>
-                <p class="en-text">Used to describe relative positions of objects.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 책상 위에 책이 있어요. (There is a book on the desk.)</li>
-                <li>2. 의자 아래에 가방이 있어요. (There is a bag under the chair.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 4 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(FINDING PLACES)</p>
-                <p>A: 화장실이 어디에 있어요? (Where is the restroom?)</p>
-                <p>B: 저기 은행 옆에 있어요. (It's over there next to the bank.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 03</div>
+      <div class="day-title">Identification & Noun Sentences</div>
+      <div class="day-focus">받침 유무에 따른 명사 서술어 완벽 정복 📚✏️<div class="eng-desc">Mastering noun endings depending on final consonants (batchim).</div></div>
+      <div class="lesson-block"><div class="lesson-header">L5. 명사 + -이에요 / 예요</div><div class="lesson-tip">💡 받침 유무: 받침 O ➔ 이에요 / 받침 X ➔ 예요<div class="eng-desc">With batchim use 이에요, without batchim use 예요 (meaning "is/am/are").</div></div><div class="lesson-content"><div>• 저는 학생이에요. <span class="eng-desc">(I am a student.)</span> | • 제 친구예요. <span class="eng-desc">(My friend.)</span></div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L6. 이거 뭐예요?</div><div class="lesson-tip">💡 지시대명사: 사물의 정체의 물을 때 사용합니다.<div class="eng-desc">Used to ask what an object is.</div></div><div class="lesson-content"><div>A: 이거 뭐예요? <span class="eng-desc">(What is this?)</span> | B: 한국어 책이에요. <span class="eng-desc">(Korean book.)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 3 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 저기요, 이거 뭐예요? <span class="eng-desc">(Excuse me, what is this?)</span> | B: 이거는 한국어 책이에요. <span class="eng-desc">(This is a Korean book.)</span></div></div>
     </div>
-
-    <!-- ==================== DAY 05 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 05</div>
-        <h1 class="title">Daily Routines & Time</h1>
-        <div class="subtitle-ko">시간과 요일을 묻고 하루 일과 표현하기 ⏰📅</div>
-        <div class="subtitle-en">Asking about time and days, and expressing daily routines.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 몇 시예요? (What time is it?)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 시(고유어)와 분(한자어)을 조합하여 시간을 말합니다.</p>
-                <p class="en-text">Combining native numbers for hours and Sino-Korean for minutes.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 지금은 세 시 삼십 분이에요. (It is 3:30 now.)</li>
-                <li>2. 몇 시에 일어나요? (What time do you wake up?)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 요일과 일상 동사</div>
-            <div class="info-box">
-                <p class="ko-text">💡 월요일, 화요일 등 요일 명칭과 기본 동사를 익힙니다.</p>
-                <p class="en-text">Learning days of the week and essential action verbs.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 오늘이 무슨 요일이에요? (What day of the week is today?)</li>
-                <li>2. 주말에는 운동을 해요. (I exercise on the weekend.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 5 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(DAILY SCHEDULE)</p>
-                <p>A: 내일 몇 시에 만나요? (What time shall we meet tomorrow?)</p>
-                <p>B: 오후 두 시에 만나요. (Let's meet at 2 PM.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 04</div>
+      <div class="day-title">Demonstratives & Noun Negation</div>
+      <div class="day-focus">거리별 지시사와 명사 부정 표현 마스터 🔍👜<div class="eng-desc">Learn spatial demonstratives and how to say something is not a noun.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L7. 이, 그, 저 (Demonstratives)</div><div class="lesson-tip">💡 위치 지시어: 이(가까이) / 그(듣는이 근처) / 저(멀리)<div class="eng-desc">This (near me), That (near you), That over there (far from both).</div></div><div class="lesson-content"><div>이 가방 <span class="eng-desc">(This bag)</span> | 그 가방 <span class="eng-desc">(That bag)</span> | 저 가방 <span class="eng-desc">(That bag over there)</span></div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L8. 명사 + 이/가 아니에요</div><div class="lesson-tip">💡 명사 부정형: 받침 O ➔ 이 아니에요 / 받침 X ➔ 가 아니에요<div class="eng-desc">Used to state "It is not [noun]".</div></div><div class="lesson-content"><div>A: 이거 커피예요? | B: 아니요, 커피가 아니에요. <span class="eng-desc">(No, it's not coffee.)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 4 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 저기요, 저거 가방이에요? <span class="eng-desc">(Is that a bag?)</span> | B: 아니요, 가방이 아니에요. 책이에요. <span class="eng-desc">(No, it's not a bag. It's a book.)</span></div></div>
     </div>
-
-    <!-- ==================== DAY 06 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 06</div>
-        <h1 class="title">Food, Taste & Ordering</h1>
-        <div class="subtitle-ko">음식 맛을 표현하고 식당에서 주문하기 🍲🥢</div>
-        <div class="subtitle-en">Describing tastes and ordering food at a restaurant.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 맛 표현하기 (맵다, 맛있다)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 음식의 맛이나 상태를 나타내는 형용사 표현입니다.</p>
-                <p class="en-text">Adjectives used to describe food flavors and quality.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 이 김치찌개는 조금 매워요. (This kimchi stew is a bit spicy.)</li>
-                <li>2. 음식이 아주 맛있어요. (The food is very delicious.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. ~ 주세요 (Please give me)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 식당이나 가게에서 원하는 물건을 공손하게 요청할 때 씁니다.</p>
-                <p class="en-text">Polite request form used when ordering at restaurants or shops.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 비빔밥 하나 주세요. (One bibimbap, please.)</li>
-                <li>2. 물도 주세요. (Water too, please.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 6 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(AT THE RESTAURANT)</p>
-                <p>A: 뭐 드릴까요? (What would you like?)</p>
-                <p>B: 불고기 두 개 주세요. (Two bulgogi, please.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 05</div>
+      <div class="day-title">Topic Particles: 은 vs 는 (Complete Guide)</div>
+      <div class="day-focus">언제 '은'을 쓰고 언제 '는'을 쓸까요? 💡✨<div class="eng-desc">Detailed rule and 5 examples for topic markers.</div></div>
+      <div class="lesson-block"><div class="lesson-header">Rule. '은' vs '는' 사용 기준</div><div class="lesson-tip">💡 구분법: 명사 끝소리에 받침이 있으면 '은', 없으면 '는'을 붙여 주제를 나타냅니다.<div class="eng-desc">Use 은 after consonants (받침 O) and 는 after vowels (받침 X) for topic markers.</div></div><div class="lesson-content"><div>1. 책상 + 은 ➔ 책상은 커요. <span class="eng-desc">(Desk is big.)</span> | 2. 사과 + 는 ➔ 사과는 맛있어요. <span class="eng-desc">(Apples are delicious.)</span></div><div>3. 오늘 + 은 ➔ 오늘은 날씨가 좋아요. <span class="eng-desc">(Today weather is good.)</span> | 4. 가방 + 은 ➔ 제 가방은 무거워요. <span class="eng-desc">(My bag is heavy.)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 5 MASTERCLASS PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 오늘은 날씨가 어때요? <span class="eng-desc">(How is the weather today?)</span> | B: 오늘은 날씨가 아주 좋아요! <span class="eng-desc">(Today, the weather is very good!)</span></div></div>
     </div>
-
-    <!-- ==================== DAY 07 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 07</div>
-        <h1 class="title">Hobbies & Free Time</h1>
-        <div class="subtitle-ko">취미를 묻고 여가 활동 말하기 🎨⚽</div>
-        <div class="subtitle-en">Asking about hobbies and talking about leisure activities.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 취미가 뭐예요? (What is your hobby?)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 여가 시간에 주로 하는 활동에 대해 대화하는 표현입니다.</p>
-                <p class="en-text">Expression for discussing activities done during free time.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 제 취미는 영화 감상이에요. (My hobby is watching movies.)</li>
-                <li>2. 주말에 주로 뭘 해요? (What do you usually do on weekends?)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 동사 연결: ~고 (~ and)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 두 가지 이상의 행동이나 사실을 나열할 때 사용합니다.</p>
-                <p class="en-text">Connecting particle used to link actions or facts.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 음악을 듣고 책을 읽어요. (I listen to music and read a book.)</li>
-                <li>2. 운동하고 친구를 만나요. (I exercise and meet a friend.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 7 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(TALKING ABOUT HOBBIES)</p>
-                <p>A: 취미가 뭐예요? (What is your hobby?)</p>
-                <p>B: 저는 음악을 듣고 축구를 해요. (I listen to music and play soccer.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 06</div>
+      <div class="day-title">Subject Particles: 이 vs 가 (Complete Guide)</div>
+      <div class="day-focus">언제 '이'를 쓰고 언제 '가'를 쓸까요? 🎯🔍<div class="eng-desc">Detailed rule and 5 examples for subject markers.</div></div>
+      <div class="lesson-block"><div class="lesson-header">Rule. '이' vs '가' 사용 기준</div><div class="lesson-tip">💡 구분법: 새로운 주어를 명시할 때, 받침이 있으면 '이', 없으면 '가'를 붙입니다.<div class="eng-desc">Use 이 after consonants (받침 O) and 가 after vowels (받침 X) for subject markers.</div></div><div class="lesson-content"><div>1. 밥 + 이 ➔ 밥이 아주 맛있어요. <span class="eng-desc">(The rice is delicious.)</span> | 3. 사과 + 가 ➔ 빨간 사과가 떨어져요. <span class="eng-desc">(Red apple falls.)</span></div><div>2. 물 + 이 ➔ 시원한 물이 있어요. <span class="eng-desc">(There is cold water.)</span> | 5. 비 + 가 ➔ 창밖에 비가 와요. <span class="eng-desc">(It is raining.)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 6 MASTERCLASS PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 지금 비가 와요? <span class="eng-desc">(Is it raining right now?)</span> | B: 네, 밖에 비가 많이 와요. <span class="eng-desc">(Yes, it's raining a lot outside.)</span></div></div>
     </div>
-
-    <!-- ==================== DAY 08 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 08</div>
-        <h1 class="title">Past Tense & Experiences</h1>
-        <div class="subtitle-ko">과거에 있었던 일과 주말 경험 이야기하기 📸✈️</div>
-        <div class="subtitle-en">Talking about past events and weekend experiences.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 과거 시제: ~았어요 / ~었어요</div>
-            <div class="info-box">
-                <p class="ko-text">💡 이미 지나간 일을 표현할 때 사용하는 과거형 어미입니다.</p>
-                <p class="en-text">Past tense verb endings used to express completed actions.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 어제 무엇을 했어요? (What did you do yesterday?)</li>
-                <li>2. 집에서 한국어 공부를 했어요. (I studied Korean at home.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 주말에 어디에 갔어요?</div>
-            <div class="info-box">
-                <p class="ko-text">💡 장소 이동의 과거형 표현을 집중 연습합니다.</p>
-                <p class="en-text">Practicing past tense expressions involving travel or movement.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 제주도에 갔어요. (I went to Jeju Island.)</li>
-                <li>2. 바다를 보고 맛있는 것을 먹었어요. (I saw the ocean and ate something delicious.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 8 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(WEEKEND RECAP)</p>
-                <p>A: 주말에 뭐 했어요? (What did you do over the weekend?)</p>
-                <p>B: 친구를 만나고 영화를 봤어요. (I met a friend and watched a movie.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 07</div>
+      <div class="day-title">Requests & Dining Expressions</div>
+      <div class="day-focus">식당 주문과 필수 에티켓 생생한 레스토랑 회화 🍽️🥢<div class="eng-desc">Essential restaurant ordering and dining etiquette.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L12. 명사 + 주세요</div><div class="lesson-tip">💡 정중한 요청: 주문이나 물건을 달라고 할 때 사용합니다.<div class="eng-desc">Polite way to ask for something like "Please give me [noun]".</div></div><div class="lesson-content"><div>커피 한 잔 주세요. <span class="eng-desc">(One cup of coffee, please.)</span> | 이거 주세요.</div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L13. 맛있어요 & 식사 인사</div><div class="lesson-tip">💡 식사 인사: 식전/식후 필수 표현입니다.<div class="eng-desc">Essential phrases before and after meals.</div></div><div class="lesson-content"><div>식전: 잘 먹겠습니다! <span class="eng-desc">(Enjoy)</span> | 식후: 잘 먹었습니다! <span class="eng-desc">(Thank you)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 7 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 불고기 하나 주세요! 잘 먹겠습니다. <span class="eng-desc">(Bulgogi please! Enjoy.)</span> | B: 맛있게 드세요! / A: 정말 맛있어요!</div></div>
     </div>
-
-    <!-- ==================== DAY 09 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 09</div>
-        <h1 class="title">Weather & Seasons</h1>
-        <div class="subtitle-ko">계절별 날씨와 기후 표현하기 ☀️❄️</div>
-        <div class="subtitle-en">Describing seasonal weather and climate conditions.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 날씨와 계절 묻기</div>
-            <div class="info-box">
-                <p class="ko-text">💡 봄, 여름, 가을, 겨울과 날씨 형용사를 배웁니다.</p>
-                <p class="en-text">Learning four seasons and weather-related adjectives.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 오늘 날씨가 어때요? (How is the weather today?)</li>
-                <li>2. 날씨가 맑고 따뜻해요. (The weather is clear and warm.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 이유 표현: ~아서 / ~어서 (Because)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 앞말이 뒷말의 이유나 원인이 될 때 사용합니다.</p>
-                <p class="en-text">Used to express reasons or causes for a situation.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 비가 와서 집에 있어요. (Because it's raining, I am at home.)</li>
-                <li>2. 날씨가 추워서 코트를 입어요. (It's cold, so I wear a coat.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 9 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(WEATHER CONVERSATION)</p>
-                <p>A: 왜 선글라스를 껴요? (Why are you wearing sunglasses?)</p>
-                <p>B: 날씨가 너무 더워서 껴요. (I wear them because the weather is too hot.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 08</div>
+      <div class="day-title">Desires & Sino-Korean Numbers</div>
+      <div class="day-focus">원하는 바를 표현하는 희망문법과 실생활 한자어 숫자 💳🔢<div class="eng-desc">Expressing wants (-고 싶어요) and Sino-Korean numbers.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L14. 동사 어간 + -고 싶어요</div><div class="lesson-tip">💡 희망 표현: 하고 싶은 바를 나타냅니다.<div class="eng-desc">Expressing "I want to [verb]".</div></div><div class="lesson-content"><div>A: 뭐 먹고 싶어요? | B: 비빔밥 먹고 싶어요. <span class="eng-desc">(I want to eat Bibimbap.)</span></div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L15. 한자어 숫자 (Sino-Korean)</div><div class="lesson-tip">💡 쓰임새: 가격(원), 전화번호, 날짜, 분 단위에 사용합니다.<div class="eng-desc">Used for prices (won), phone numbers, dates, and minutes.</div></div><div class="lesson-content"><div>삼천원 <span class="eng-desc">(3,000 KRW)</span> | 십이월 이십오일 <span class="eng-desc">(Dec 25)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 8 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 오늘 뭐 하고 싶어요? | B: 카페에서 삼천원짜리 커피 마시고 싶어요!</div></div>
     </div>
-
-    <!-- ==================== DAY 10 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 10</div>
-        <h1 class="title">Transportation & Directions</h1>
-        <div class="subtitle-ko">교통수단을 이용해 길 찾아가기 🚇🚌</div>
-        <div class="subtitle-en">Using transportation and finding directions.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 교통수단 조사: ~로 / ~으로 (By means of)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 이동 수단이나 도구를 나타낼 때 사용하는 조사입니다.</p>
-                <p class="en-text">Particle used to indicate means of transportation or methods.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 지하철로 가요. (I go by subway.)</li>
-                <li>2. 버스를 타고 회사에 와요. (I take a bus and come to the office.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 길 찾기 방향 표현 (오른쪽, 왼쪽)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 방향을 안내하거나 위치를 설명할 때 쓰는 어휘입니다.</p>
-                <p class="en-text">Directional vocabulary used when giving or asking for directions.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 오른쪽으로 가세요. (Please go to the right.)</li>
-                <li>2. 직진하세요. (Go straight ahead.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 10 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(GIVING DIRECTIONS)</p>
-                <p>A: 시청에 어떻게 가요? (How do I get to City Hall?)</p>
-                <p>B: 지하철로 가세요. 저기서 오른쪽이에요. (Go by subway. It's to the right over there.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 09</div>
+      <div class="day-title">Present & Past Tense Conjugation</div>
+      <div class="day-focus">한국어 시제 변화의 핵심 현재와 과거형 활용법 ⏳📅<div class="eng-desc">Mastering present and past tense verb conjugations.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L16. 현재시제 (-아/어/해요)</div><div class="lesson-tip">💡 모음 규칙: 아/ㅗ ➔ 아요 / 그외 ➔ 어요 / 하다 ➔ 해요<div class="eng-desc">Present tense ending rules based on stem vowels.</div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L17. 과거시제 (-았/었/했어요)</div><div class="lesson-tip">💡 과거형: 았어요 / 었어요 / 했어요 결합<div class="eng-desc">Past tense suffix rules (-았/었/했어요).</div></div><div class="lesson-content"><div>어제 친구를 만났어요. <span class="eng-desc">(Met a friend yesterday.)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 9 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 어제 뭐 했어요? | B: 한국어를 공부했어요. 그리고 친구를 만났어요.</div></div>
     </div>
-
-    <!-- ==================== DAY 11 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 11</div>
-        <h1 class="title">Phone Calls & Appointments</h1>
-        <div class="subtitle-ko">약속을 잡고 전화 통화하기 📞📅</div>
-        <div class="subtitle-en">Making phone calls and scheduling appointments.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 전화 통화 시작 표현</div>
-            <div class="info-box">
-                <p class="ko-text">💡 전화를 걸고 받을 때 쓰는 전용 인사말입니다.</p>
-                <p class="en-text">Standard greeting expressions used when making or answering phone calls.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 여보세요? 마이클 씨 있어요? (Hello? Is Michael there?)</li>
-                <li>2. 네, 잠깐만요. (Yes, just a moment please.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 의지/예정: ~(으)ㄹ 거예요 (Will / Plan to)</div>
-            <div class="info-box">
-                <p class="ko-text">💡 앞으로의 계획이나 미래의 일을 나타낼 때 사용합니다.</p>
-                <p class="en-text">Used to express future intentions or scheduled plans.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 내일 친구를 만날 거예요. (I will meet a friend tomorrow.)</li>
-                <li>2. 저녁에 영화를 볼 거예요. (I am going to watch a movie in the evening.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 11 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(MAKING AN APPOINTMENT)</p>
-                <p>A: 내일 저녁에 시간 있어요? (Do you have time tomorrow evening?)</p>
-                <p>B: 네, 같이 저녁을 먹을 거예요. (Yes, we are going to have dinner together.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 10</div>
+      <div class="day-title">Location Particles & Time Questions</div>
+      <div class="day-focus">위치와 행동 장소의 구분 그리고 시간 묻기 🗺️⏰<div class="eng-desc">Differentiating location particles and asking 'when'.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L18. -에 vs -에서 (Location)</div><div class="lesson-tip">💡 위치 vs 행동: -에(이동/존재) vs -에서(행동 장소)<div class="eng-desc">-에 for existence/destination, -에서 for active action locations.</div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L19. 의문사 '언제' (When)</div><div class="lesson-tip">💡 시간 질문: 시각이나 날짜를 물어볼 때 사용합니다.<div class="eng-desc">Used to ask about time or dates.</div></div><div class="lesson-content"><div>언제 한국에 가요? <span class="eng-desc">(When do you go to Korea?)</span></div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 10 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 언제 카페에 가요? | B: 오늘 두 시에 가요! 카페에서 친구를 만나요.</div></div>
     </div>
-
-    <!-- ==================== DAY 12 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 12</div>
-        <h1 class="title">Requests & Permissions</h1>
-        <div class="subtitle-ko">부탁하고 허락 구하기 🙏✨</div>
-        <div class="subtitle-en">Making polite requests and asking for permission.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 정중한 부탁: ~아/어 주세요</div>
-            <div class="info-box">
-                <p class="ko-text">💡 상대방에게 어떤 행동을 정중하게 부탁할 때 사용합니다.</p>
-                <p class="en-text">Polite request form asking someone to do a favor.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 창문을 열어 주세요. (Please open the window.)</li>
-                <li>2. 이것을 도와주세요. (Please help me with this.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 허락 구하기: ~(으)ㄹ 수 있어요?</div>
-            <div class="info-box">
-                <p class="ko-text">💡 가능성이나 허락을 묻고 답하는 표현입니다.</p>
-                <p class="en-text">Expressing capability or asking for permission.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 여기에 앉을 수 있어요? (Can I sit here?)</li>
-                <li>2. 네, 앉으세요. (Yes, please sit down.)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 12 COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(PERMISSION & REQUEST)</p>
-                <p>A: 사진을 찍을 수 있어요? (Can I take a picture?)</p>
-                <p>B: 네, 찍으세요. 저도 사진을 찍어 주세요. (Yes, take it. Please take a picture of me too.)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 11</div>
+      <div class="day-title">Native Numbers & Counter Units</div>
+      <div class="day-focus">고유어 숫자 변형 규칙과 필수 단위명사(개, 잔, 명) ☕📦<div class="eng-desc">Native numbers transformation rules and essential counter units.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L20. 고유어 숫자 및 단위명사 (Counters)</div><div class="lesson-tip">💡 변형 규칙: 하나➔한, 둘➔두, 셋➔세, 넷➔네 + 개/잔/명<div class="eng-desc">Native numbers shorten when combined with counters (개 items, 잔 cups, 명 people).</div></div><div class="lesson-content"><div>사과 한 개, 커피 두 잔, 세 명 / 지금 두 시예요.</div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 11 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 지금 몇 시예요? | B: 두 시예요. 아이스 아메리카노 두 잔 주세요!</div></div>
     </div>
-
-    <!-- ==================== DAY 13 ==================== -->
-    <div class="curriculum-card">
-        <div class="badge">DAY 13</div>
-        <h1 class="title">Review & Graduation Conversation</h1>
-        <div class="subtitle-ko">총정리 및 자연스러운 종합 회화 마무리 🎉🎓</div>
-        <div class="subtitle-en">Comprehensive review and final graduation conversation.</div>
-        <div class="divider"></div>
-        <div class="lesson-block">
-            <div class="lesson-title">L1. 종합 회화 패턴 점검</div>
-            <div class="info-box">
-                <p class="ko-text">💡 지금까지 배운 인사, 소개, 쇼핑, 길 찾기 표현을 종합합니다.</p>
-                <p class="en-text">Integrating greetings, introductions, shopping, and directions learned so far.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 그동안 한국어 공부를 열심히 했어요. (I've studied Korean hard all this time.)</li>
-                <li>2. 앞으로도 한국어로 자주 이야기해요. (Let's speak Korean often in the future too.)</li>
-            </ul>
-        </div>
-        <div class="lesson-block">
-            <div class="lesson-title">L2. 졸업 및 감사 인사</div>
-            <div class="info-box">
-                <p class="ko-text">💡 수업을 마무리하며 서로에게 감사를 전하는 인사말입니다.</p>
-                <p class="en-text">Closing expressions of gratitude as the course concludes.</p>
-            </div>
-            <ul class="example-list">
-                <li>1. 정말 수고 많으셨습니다. (You've worked really hard.)</li>
-                <li>2. 새해 복 많이 받으세요 / 감사합니다! (Thank you for everything!)</li>
-            </ul>
-        </div>
-        <div class="practice-box">
-            <div class="practice-header">⚡ DAY 13 FINAL COMBINED PRACTICE</div>
-            <div class="practice-content">
-                <p style="font-weight: 600; margin-bottom: 10px;">(FINAL GRADUATION DIALOGUE)</p>
-                <p>A: 한국어 커리큘럼이 끝났어요. 어땠어요? (The Korean curriculum is finished. How was it?)</p>
-                <p>B: 아주 재미있고 유익했어요! 감사합니다! (It was very fun and useful! Thank you!)</p>
-            </div>
-        </div>
+    <div class="slide-card">
+      <div class="day-badge">DAY 12</div>
+      <div class="day-title">Verb Negation & Key Question Words</div>
+      <div class="day-focus">동사 부정문('안')과 이유·방법을 묻는 의문사 ❓❌<div class="eng-desc">Short verb negation ('안') and question words (who, why, how).</div></div>
+      <div class="lesson-block"><div class="lesson-header">L21. 동사 부정형 (안 + Verb)</div><div class="lesson-tip">💡 안 부정문: 동사 바로 앞에 '안'을 붙입니다.<div class="eng-desc">Place '안' right before the verb to express "do not [verb]".</div></div><div class="lesson-content"><div>오늘 학교에 안 가요. <span class="eng-desc">(I don't go to school today.)</span></div></div></div>
+      <div class="lesson-block"><div class="lesson-header">L22. 누구, 왜, 어떻게</div><div class="lesson-tip">💡 핵심 의문사: 사람, 이유, 방법을 물어볼 때 씁니다.<div class="eng-desc">Question words for who (누구), why (왜), and how (어떻게).</div></div><div class="lesson-content"><div>왜 운동 안 해요? / 강남역에 어떻게 가요?</div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 12 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>A: 오늘 왜 운동 안 해요? | B: 오늘 친구 만나요! 강남역에서 누구하고 놀아요.</div></div>
     </div>
-
+    <div class="slide-card">
+      <div class="day-badge">DAY 13</div>
+      <div class="day-title">Ranges & Final Review Assessment</div>
+      <div class="day-focus">범위 표현과 함께하는 최종 종합 롤플레이 평가 🏆🎉<div class="eng-desc">Spatial/temporal ranges and final comprehensive roleplay evaluation.</div></div>
+      <div class="lesson-block"><div class="lesson-header">L23. 범위 표현 (-에서/부터 -까지)</div><div class="lesson-tip">💡 시작과 끝: 장소(~에서~까지) 및 시간(~부터~까지) 범위 지정<div class="eng-desc">Expressing "from... to..." for places and times.</div></div></div>
+      <div class="lesson-block"><div class="lesson-header">FINAL Roleplay Assessment</div><div class="lesson-tip">💡 최종 평가: 자기소개, 이동, 식당 주문 및 대화 총동원 수행<div class="eng-desc">Comprehensive final speaking assessment utilizing all learned patterns.</div></div></div>
+      <div class="practice-box"><div class="practice-title">⚡ DAY 13 COMBINED PRACTICE</div><div class="eng-desc" style="margin-bottom: 4px;">(PRACTICE CONVERSATIONAL FLOW)</div><div>아홉 시부터 여섯 시까지 서울에서 부산까지 여행했어요. 비빔밥을 먹었고 정말 맛있었어요!</div></div>
+    </div>
+  </div>
 </body>
 </html>
+EOF
